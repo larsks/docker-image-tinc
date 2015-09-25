@@ -2,7 +2,7 @@ FROM fedora
 
 EXPOSE 655/udp
 VOLUME /etc/tinc
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["tincd"]
 
 RUN dnf -y install \
 	tinc \
@@ -11,7 +11,3 @@ RUN dnf -y install \
 	tcpdump \
 	; dnf clean all
 
-COPY entrypoint.sh /entrypoint.sh
-COPY start.sh /start.sh
-
-CMD ["/start.sh"]
