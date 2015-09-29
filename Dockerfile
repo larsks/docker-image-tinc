@@ -5,4 +5,4 @@ VOLUME /etc/tinc
 ENTRYPOINT ["tincd", "-D"]
 
 RUN apk update
-RUN apk add tinc tcpdump
+RUN apk add tinc tcpdump iptables
